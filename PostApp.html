@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post App by Ahmed</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- >>>>>> User Form Page <<<<<< -->
+
+    <form
+      onsubmit="getValue()"
+      class="formContainer animate__animated animate__slideInDown"
+    >
+      <h1>Sign Up</h1>
+      <input type="text" placeholder="User Name" required id="formUserName" />
+      <input type="email" placeholder="Email address" required />
+      <input
+        type="password"
+        required
+        placeholder="Password"
+        id="formUserPass"
+      />
+      <button>Submit</button>
+    </form>
+    <!-- >>>>>> Sign Up Page <<<<<< -->
+
+    <div class="signup-container">
+      <div class="signup-box">
+        <div class="signup-left">
+          <h1>Postbook</h1>
+          <p>
+            Postbook helps you connect and share with the people in your life.
+          </p>
+        </div>
+        <div class="signup-right">
+          <div>
+            <img id="userImage" src="assests/images/userpicture.webp" />
+            <div class="center">
+              <label for="files" class="btn-img">Browse Image</label>
+              <input
+                id="files"
+                type="file"
+                accept="image/*"
+                onchange="loadFile(event)"
+              />
+            </div>
+            <input type="text" id="userName" placeholder="UserName" />
+            <input type="password" placeholder="Password" id="password" />
+            <button class="signup-btn-blue" onclick="login()">Log in</button>
+            <p>Forgotten Password?</p>
+            <hr />
+            <button class="signup-btn-green" onclick="create()">
+              Create new account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- >>>>>> Timeline <<<<<< -->
+
+    <div class="post-container">
+      <div class="post-box">
+        <span>Create post</span>
+        <div class="hr"></div>
+        <div class="flex">
+          <div>
+            <img src="assests/images/userpicture.webp" id="userPicture" />
+          </div>
+          <div>
+            <h1 id="changedName">Ahmedraza</h1>
+            <div class="flex friends">
+              <img src="assests/images/friends.png" />
+              <p>Friends</p>
+              <img src="assests/images/dropDown.png" />
+            </div>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="display"
+          placeholder="What's on your mind?"
+          onkeypress="changeColors()"
+        />
+        <div id="bgPicture" class="bgPicture">
+          <img src="assests/images/bg1.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg2.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg3.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg4.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg5.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg6.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg7.png" onclick="changeBG(event)" />
+          <img src="assests/images/bg8.png" onclick="changeBG(event)" />
+          <label for="color">
+            <input
+              type="color"
+              id="color"
+              name="color"
+              onchange="colorChaning()"
+              style="display: none"
+            />
+            <img src="assests/images/color-mode.gif" />
+          </label>
+        </div>
+        <button class="btn-post" onclick="posted()">Post</button>
+      </div>
+      <div id="postUpdate"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
